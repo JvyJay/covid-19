@@ -22,7 +22,7 @@ const NavComponent = (props) => {
     <div>
       <Navbar className='bg-warning' light expand='lg'>
         <NavbarBrand href='/'>
-          <img src={logo} style={imgResize} /> Quarantine Shop
+          <img src={logo} style={imgResize} alt='logo' /> Quarantine Shop
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

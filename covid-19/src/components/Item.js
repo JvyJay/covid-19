@@ -11,23 +11,15 @@ import {
 
 const Item = (props) => {
   return (
-    <div>
-      <Card>
-        <CardImg />
-        <CardBody>
-          <CardTitle>Item</CardTitle>
-          <CardSubtitle>Subtitle</CardSubtitle>
-          <CardText>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            tincidunt pharetra odio, nec molestie tortor placerat vel. Quisque
-            vitae diam tortor. Praesent rhoncus feugiat libero in condimentum.
-            Vestibulum sed consequat arcu, eu volutpat eros. Pellentesque
-            feugiat nisi vitae ligula sodales fermentum.
-          </CardText>
-          <Button>Add To Card</Button>
-        </CardBody>
-      </Card>
-    </div>
+    <Card key={props.key} className='w-25 m-5'>
+      <CardImg src={props.img} />
+      <CardBody>
+        <CardTitle>{props.title}</CardTitle>
+        <CardSubtitle>{props.price}</CardSubtitle>
+        <CardText>{props.text}</CardText>
+        <Button>Add To Cart</Button>
+      </CardBody>
+    </Card>
   );
 };
 
