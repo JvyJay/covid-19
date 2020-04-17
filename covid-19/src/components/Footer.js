@@ -8,9 +8,9 @@ const Footer = () => {
   };
 
   return (
-    <div>
+    <>
       <footer style={footerStyle}>Quarantine Store &copy; 2020</footer>
-    </div>
+    </>
   );
 };
 

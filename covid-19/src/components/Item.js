@@ -6,8 +6,9 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button,
 } from 'reactstrap';
+
+import ItemButtons from './ItemButtons';
 
 const Item = (props) => {
   return (
@@ -17,7 +18,7 @@ const Item = (props) => {
         <CardTitle>{props.title}</CardTitle>
         <CardSubtitle>{props.price}</CardSubtitle>
         <CardText>{props.text}</CardText>
-        <Button>Add To Cart</Button>
+        <ItemButtons />
       </CardBody>
     </Card>
   );

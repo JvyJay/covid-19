@@ -7,7 +7,7 @@ const Store = () => {
   const items = useContext(ItemContext);
   return (
     <>
-      <h1 className='p-4 text-center'>Health & Wellness</h1>
+      <h1 className='p-4 text-center'>Health {`&`} Wellness</h1>
       <div className='d-flex flex-row justify-content-center'>
         {items.map((item) => {
           return (
