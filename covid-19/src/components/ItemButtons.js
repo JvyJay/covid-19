@@ -8,7 +8,7 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
-const ItemButtons = (props) => {
+const ItemButtons = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
