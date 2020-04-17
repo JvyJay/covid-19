@@ -8,26 +8,30 @@ import {
   NavbarToggler,
   Collapse,
 } from 'reactstrap';
+import logo from '../img/logo.png';
+
+const imgResize = {
+  width: '25px',
+};
 
 const NavComponent = (props) => {
-  const [isOpen, setIsOpen] = useState[false];
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div>
-      <Navbar color='light' light expand='md'>
-        <NavbarBrand href='/'>Quarantine Shop</NavbarBrand>
+      <Navbar className='bg-warning' light expand='lg'>
+        <NavbarBrand href='/'>
+          <img src={logo} style={imgResize} /> Quarantine Shop
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className='mr-auto' navbar>
             <NavItem>
-              <NavLink href='/'>Login</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>Logout</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink>Store</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>Cart</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
