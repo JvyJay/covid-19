@@ -3,7 +3,6 @@ import './App.css';
 import { ItemContext } from './context/DataProvider';
 
 import NavComponent from './components/Navbar';
-import Store from './components/Store';
 import Footer from './components/Footer';
 
 import img1 from './img/handsanitizer.jpg';
@@ -40,7 +39,6 @@ const App = () => {
     <ItemContext.Provider value={data}>
       <div className='App'>
         <NavComponent />
-        <Store />
         <Footer />
       </div>
     </ItemContext.Provider>
