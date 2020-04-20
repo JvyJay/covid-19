@@ -1,4 +1,4 @@
-import img1 from './img/handsanitizer.jpg';
+import img1 from './img/handsanitizer.jpeg';
 import img2 from './img/masks.jpg';
 import img3 from './img/toiletpaper.jpg';
 
