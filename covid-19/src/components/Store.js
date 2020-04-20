@@ -12,7 +12,7 @@ const Store = () => {
       <h1 className='p-4 text-center'>Health {`&`} Wellness</h1>
       <Container>
         <Row>
-          <div className=' d-xl-flex flex-row justify-content-center'>
+          <div className=' d-lg-flex flex-row justify-content-center'>
             {items.map((item) => {
               return (
                 <Item

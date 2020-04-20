@@ -34,7 +34,7 @@ const Item = (props) => {
               onClick={() => props.addItem(props.product)}
               className='mr-2'
             >
-              Add To Cart
+              Buy
             </Button>
             <Dropdown isOpen={dropdownOpen} toggle={toggle}>
               <DropdownToggle caret>Qty</DropdownToggle>
