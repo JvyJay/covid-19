@@ -20,17 +20,15 @@ const App = () => {
     setCart([...cart, item]);
   };
 
-  const outOfStock = () => {
-    swal(
-      'Out of Stock',
-      'Looks like the panic buyers beat you to it :(',
-      'error'
-    );
+  const removeItem = (index) => {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    setCart(newCart);
   };
 
   return (
-    <ItemContext.Provider value={{ items, addItem, outOfStock }}>
-      <CartContext.Provider value={cart}>
+    <ItemContext.Provider value={{ items, addItem }}>
+      <CartContext.Provider value={{ cart, removeItem }}>
         <div className='App'>
           <NavComponent cart={cart} />
           <Route exact path='/' component={Store} />

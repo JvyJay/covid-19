@@ -7,10 +7,12 @@
 }
 
 footer {
+  background-color: #ffc107;
   position: absolute;
   bottom: 0;
-  text-align: center;
   width: 100%;
+  padding: 20px;
+  text-align: center;
 }
 
 footer p {

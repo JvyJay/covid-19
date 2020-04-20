@@ -7,7 +7,7 @@ import CartItem from './CartItem';
 
 const Cart = () => {
   const [toggle, setToggle] = useState(false);
-  const cart = useContext(CartContext);
+  const { cart, removeItem } = useContext(CartContext);
 
   const total = () => {
     return cart
@@ -30,7 +30,7 @@ const Cart = () => {
       <Container>
         <div className='flex-column justify-content-center align-items-center'>
           {cart.map((item) => (
-            <CartItem key={item.id} {...item} />
+            <CartItem key={item.id} {...item} removeItem={removeItem} />
           ))}
         </div>
       </Container>

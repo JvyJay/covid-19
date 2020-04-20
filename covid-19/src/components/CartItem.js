@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
   Card,
@@ -21,7 +21,7 @@ const CartItem = (props) => {
             {`$`}
             {props.price}
           </CardSubtitle>
-          <Button>Remove from cart</Button>
+          <Button onClick={() => props.removeItem()}>Remove from cart</Button>
         </CardBody>
       </Card>
     </Col>
