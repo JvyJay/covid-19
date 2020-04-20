@@ -28,11 +28,13 @@ const Cart = () => {
       )}
       {cart.length >= 1 && <h1 className='p-4 text-center'>Your Cart</h1>}
       <Container>
-        <div className='flex-column justify-content-center align-items-center'>
-          {cart.map((item) => (
-            <CartItem key={item.id} {...item} removeItem={removeItem} />
-          ))}
-        </div>
+        <Row>
+          <div className='flex-column justify-content-center align-items-center'>
+            {cart.map((item) => (
+              <CartItem key={item.id} {...item} removeItem={removeItem} />
+            ))}
+          </div>
+        </Row>
       </Container>
       {cart.length >= 1 && (
         <div className='text-center'>

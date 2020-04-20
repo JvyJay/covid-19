@@ -10,7 +10,6 @@ import NavComponent from './components/Navbar';
 import Store from './components/Store';
 import Cart from './components/Cart';
 import Footer from './components/Footer';
-import swal from 'sweetalert';
 
 const App = () => {
   const [items] = useState(data);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   Navbar,
@@ -9,10 +9,13 @@ import {
   Collapse,
 } from 'reactstrap';
 
+import { CartContext } from '../context/CartContext';
+
 import logo from '../img/logo.png';
-import cart from '../img/cart.svg';
+import img from '../img/cart.svg';
 
 const NavComponent = () => {
+  const cart = useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -35,8 +38,7 @@ const NavComponent = () => {
           </NavItem>
           <NavItem>
             <NavLink className='text-dark' to='/cart'>
-              Cart <img width={`15px`} src={cart} alt={`Cart`} />{' '}
-              {/* <span>{cart.length}</span> */}
+              Cart <img width={`15px`} src={img} alt={`Cart`} />{' '}
             </NavLink>
           </NavItem>
         </Nav>
