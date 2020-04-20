@@ -5,7 +5,7 @@ import { Container, Row } from 'reactstrap';
 import Item from './Item';
 
 const Store = () => {
-  const { items, addItem } = useContext(ItemContext);
+  const { items, addItem, outOfStock } = useContext(ItemContext);
 
   return (
     <>
@@ -16,12 +16,14 @@ const Store = () => {
             {items.map((item) => {
               return (
                 <Item
+                  id={item.id}
                   product={item}
                   img={item.img}
                   title={item.title}
                   price={item.price}
                   text={item.text}
                   addItem={addItem}
+                  outOfStock={outOfStock}
                 />
               );
             })}

@@ -28,18 +28,20 @@ const Cart = () => {
       )}
       {cart.length >= 1 && <h1 className='p-4 text-center'>Your Cart</h1>}
       <Container>
-        <Row>
-          <div className=' d-lg-flex flex-row justify-content-center'>
-            {cart.map((item) => (
-              <CartItem key={item.id} {...item} />
-            ))}
-          </div>
-        </Row>
+        <div className='flex-column justify-content-center align-items-center'>
+          {cart.map((item) => (
+            <CartItem key={item.id} {...item} />
+          ))}
+        </div>
       </Container>
-      <div className='text-center'>
-        <Button onClick={visibleToggle}>Get Total</Button>
-        <p className={!toggle ? 'notVisible' : 'visible'}>Total: ${total()}</p>
-      </div>
+      {cart.length >= 1 && (
+        <div className='text-center'>
+          <Button onClick={visibleToggle}>Get Total</Button>
+          <p className={(`mt-2`, !toggle ? 'notVisible' : 'visible')}>
+            Total: ${total()}
+          </p>
+        </div>
+      )}
     </>
   );
 };

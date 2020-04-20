@@ -14,16 +14,24 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
+import swal from 'sweetalert';
 
 const Item = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+  const forTheMeme = () => {
+    if (props.product.id === 2) {
+      props.outOfStock();
+    }
+  };
+
   return (
     <Col>
       <Card key={props.key} className='m-5'>
         <CardImg src={props.img} />
         <CardBody>
-          <CardTitle>{props.title}</CardTitle>
+          <CardTitle className='font-weight-bold'>{props.title}</CardTitle>
           <CardSubtitle>
             {`$`}
             {props.price}
