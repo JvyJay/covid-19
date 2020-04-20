@@ -5,7 +5,8 @@ import { Container, Row } from 'reactstrap';
 import Item from './Item';
 
 const Store = () => {
-  const items = useContext(ItemContext);
+  const { items, addItem } = useContext(ItemContext);
+
   return (
     <>
       <h1 className='p-4 text-center'>Health {`&`} Wellness</h1>
@@ -15,10 +16,12 @@ const Store = () => {
             {items.map((item) => {
               return (
                 <Item
+                  product={item}
                   img={item.img}
                   title={item.title}
                   price={item.price}
                   text={item.text}
+                  addItem={addItem}
                 />
               );
             })}
