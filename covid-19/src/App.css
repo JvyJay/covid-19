@@ -4,6 +4,8 @@
 
 .visible {
   visibility: visible;
+  font-weight: bold;
+  margin: 0;
 }
 
 footer {
@@ -17,4 +19,32 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+.w-resize {
+  width: 100px;
+}
+
+.cart-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .cart-box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .total {
+    margin-bottom: 20px;
+  }
 }

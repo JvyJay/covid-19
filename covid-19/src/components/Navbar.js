@@ -15,7 +15,6 @@ import logo from '../img/logo.png';
 import img from '../img/cart.svg';
 
 const NavComponent = () => {
-  const cart = useContext(CartContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 

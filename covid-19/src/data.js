@@ -20,7 +20,7 @@ export default [
   },
   {
     id: 3,
-    title: 'Toilet Paper (20 Rolls)',
+    title: 'Toilet Paper (4 Pack)',
     img: img3,
     price: 1000,
     text: 'Better get them before the panic buyers do',

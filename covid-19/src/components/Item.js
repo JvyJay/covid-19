@@ -7,18 +7,10 @@ import {
   CardTitle,
   CardSubtitle,
   Col,
-  ButtonGroup,
   Button,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from 'reactstrap';
 
 const Item = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-
   return (
     <Col>
       <Card key={props.key} className='m-5'>
@@ -30,23 +22,13 @@ const Item = (props) => {
             {props.price}
           </CardSubtitle>
           <CardText>{props.text}</CardText>
-          <ButtonGroup>
-            <Button
-              onClick={() => props.addItem(props.product)}
-              className='mr-2'
-            >
-              Buy
-            </Button>
-            <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-              <DropdownToggle caret>Qty</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>1</DropdownItem>
-                <DropdownItem>2</DropdownItem>
-                <DropdownItem>3</DropdownItem>
-                <DropdownItem>4</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </ButtonGroup>
+          <Button
+            outline
+            color='success'
+            onClick={() => props.addItem(props.product)}
+          >
+            Buy
+          </Button>
         </CardBody>
       </Card>
     </Col>

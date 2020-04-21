@@ -19,15 +19,15 @@ const App = () => {
     setCart([...cart, item]);
   };
 
-  const removeItem = (index) => {
+  const clearCart = (index) => {
     const newCart = [...cart];
-    newCart.splice(index, 1);
+    newCart.splice(index);
     setCart(newCart);
   };
 
   return (
     <ItemContext.Provider value={{ items, addItem }}>
-      <CartContext.Provider value={{ cart, removeItem }}>
+      <CartContext.Provider value={{ cart, clearCart }}>
         <div className='App'>
           <NavComponent cart={cart} />
           <Route exact path='/' component={Store} />

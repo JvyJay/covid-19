@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
-import { Button, Container, Row } from 'reactstrap';
+import { Button, ButtonGroup, Container, Row } from 'reactstrap';
+import swal from 'sweetalert';
 
 import CartItem from './CartItem';
 
 const Cart = () => {
   const [toggle, setToggle] = useState(false);
-  const { cart, removeItem } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
 
   const total = () => {
     return cart
@@ -29,21 +30,43 @@ const Cart = () => {
       {cart.length >= 1 && <h1 className='p-4 text-center'>Your Cart</h1>}
       <Container>
         <Row>
-          <div className='flex-column justify-content-center align-items-center'>
+          <div className='flex-column justify-content-center align-items-center mb-4'>
             {cart.map((item) => (
-              <CartItem key={item.id} {...item} removeItem={removeItem} />
+              <CartItem key={item.id} {...item} />
             ))}
           </div>
         </Row>
+
+        {cart.length >= 1 && (
+          <div className='cart-box mt-4'>
+            <div className='total'>
+              <Button className='mr-2' onClick={visibleToggle}>
+                Get Total
+              </Button>
+              <p className={!toggle ? 'notVisible' : 'visible'}>${total()}</p>
+            </div>
+            <div className='button-group'>
+              <ButtonGroup>
+                <Button color='danger' onClick={clearCart}>
+                  Clear Cart
+                </Button>
+                <Button
+                  color='success'
+                  onClick={() =>
+                    swal(
+                      'Successful Transaction',
+                      'You are now ready for the apocalypse :)',
+                      'success'
+                    )
+                  }
+                >
+                  Checkout
+                </Button>
+              </ButtonGroup>
+            </div>
+          </div>
+        )}
       </Container>
-      {cart.length >= 1 && (
-        <div className='text-center'>
-          <Button onClick={visibleToggle}>Get Total</Button>
-          <p className={(`mt-2`, !toggle ? 'notVisible' : 'visible')}>
-            Total: ${total()}
-          </p>
-        </div>
-      )}
     </>
   );
 };

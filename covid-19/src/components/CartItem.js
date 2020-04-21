@@ -1,29 +1,22 @@
 import React from 'react';
 
-import {
-  Card,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Col,
-  Button,
-} from 'reactstrap';
+import { Col, Media } from 'reactstrap';
 
 const CartItem = (props) => {
   return (
-    <Col>
-      <Card key={props.key} className='m-5'>
-        <CardImg src={props.img} />
-        <CardBody>
-          <CardTitle className='font-weight-bold'>{props.title}</CardTitle>
-          <CardSubtitle className='mb-2'>
+    <Col className='mt-4'>
+      <Media>
+        <Media left href='#'>
+          <img className='w-resize' src={props.img} alt='Item' />
+        </Media>
+        <Media className='ml-2' body>
+          <Media heading>{props.title}</Media>
+          <Media>
             {`$`}
             {props.price}
-          </CardSubtitle>
-          <Button onClick={() => props.removeItem()}>Remove from cart</Button>
-        </CardBody>
-      </Card>
+          </Media>
+        </Media>
+      </Media>
     </Col>
   );
 };
