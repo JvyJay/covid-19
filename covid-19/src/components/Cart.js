@@ -29,7 +29,7 @@ const Cart = () => {
       )}
       {cart.length >= 1 && <h1 className='p-4 text-center'>Your Cart</h1>}
       <Container>
-        <Row>
+        <Row className='shadow p-3 mb-5 bg-white rounded'>
           <div className='flex-column justify-content-center align-items-center mb-4'>
             {cart.map((item) => (
               <CartItem key={item.id} {...item} />

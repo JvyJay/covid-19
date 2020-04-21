@@ -13,7 +13,7 @@ import {
 const Item = (props) => {
   return (
     <Col>
-      <Card key={props.key} className='m-5'>
+      <Card key={props.key} className='m-5 shadow p-3 bg-white rounded'>
         <CardImg src={props.img} />
         <CardBody>
           <CardTitle className='font-weight-bold'>{props.title}</CardTitle>
