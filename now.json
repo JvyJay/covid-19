@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "covid-19",
+  "builds": [
+    {
+      "src": "covid-19/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "covid-19/$1" }]
+}
