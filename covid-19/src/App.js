@@ -15,10 +15,12 @@ const App = () => {
   const [items] = useState(data);
   const [cart, setCart] = useState([]);
 
+  /* Adds item to cart */
   const addItem = (item) => {
     setCart([...cart, item]);
   };
 
+  /* Clears the cart */
   const clearCart = (index) => {
     const newCart = [...cart];
     newCart.splice(index);

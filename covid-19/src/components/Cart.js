@@ -10,6 +10,7 @@ const Cart = () => {
   const [toggle, setToggle] = useState(false);
   const { cart, clearCart } = useContext(CartContext);
 
+  /* Calculates total cost */
   const total = () => {
     return cart
       .reduce((acc, value) => {
@@ -18,6 +19,7 @@ const Cart = () => {
       .toFixed(2);
   };
 
+  /* Makes total cost visible */
   const visibleToggle = () => {
     setToggle(true);
   };
@@ -25,11 +27,16 @@ const Cart = () => {
   return (
     <>
       {cart.length === 0 && (
+        /* Text shown if no items in cart */
         <h1 className='p-4 text-center'>No items in cart</h1>
       )}
-      {cart.length >= 1 && <h1 className='p-4 text-center'>Your Cart</h1>}
+      {cart.length >= 1 && (
+        /* Text shown if 1 or more items in cart */ <h1 className='p-4 text-center'>
+          Your Cart
+        </h1>
+      )}
       <Container>
-        <Row className='shadow p-3 mb-5 bg-white rounded'>
+        <Row className='p-3 mb-5 bg-white rounded'>
           <div className='flex-column justify-content-center align-items-center mb-4'>
             {cart.map((item) => (
               <CartItem key={item.id} {...item} />
